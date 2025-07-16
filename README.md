@@ -1,8 +1,7 @@
-# WeatherApp – Take-Home Assignment Teil 2
+# WeatherApp – Take-Home Assignment Teil 3
 
-Dieses Branch erweitert den **Forecast-Service** (Teil 1) um **Adress-Geocoding** via OpenCage und 5-Tage-Forecast via OpenWeatherMap.
-- **OpenCage Geocoder**: Adresse → Koordinaten
-- **OpenWeatherMap 5-day Forecast API**: Koordinaten → Wetterdaten im 3-Stunden-Takt
+Dieses Branch erweitert den **Forecast-Service** (Teil 1) und die **Webservice-Anbindung** (Teil 2) um eine 
+Authentifizierungsmöglichkeit per HTTP Basic Auth. Nur authentifizierte User dürfen Daten abrufen.
 
 ### WICHTIG: Umgebung konfigurieren
 
@@ -15,12 +14,17 @@ $Env:OPENWEATHER_API_KEY="HIER_DEIN_OPENWEATHER_KEY"
 # macOS/Linux (Bash)
 export OPENCAGE_API_KEY="HIER_DEIN_OPENCAGE_KEY"
 export OPENWEATHER_API_KEY="HIER_DEIN_OPENWEATHER_KEY"
+
+# Um die App in der IDE zu starten, müssen die Variablen in den Konfigurationen der App gesetzt werden
+z.B. in IntelliJ: Run Configurations -> Modify options -> Environment variables
+
+# oder setz die Variablen direkt in ```src/main/resources/application.properties``` ein
 ```
 
 Projekt starten:
 ```bash
 # Branch wechseln
-git checkout part-2-geocoding
+git checkout part-3-security
 
 # Build & Run (Windows PowerShell)
 .\mvnw.cmd clean install
@@ -46,10 +50,9 @@ GET /forecast?country={country}&city={city}&street={street}&housenumber={housenu
 **Beispiele**
 ```
 # Koordinaten-Anfrage
-curl "http://localhost:8080/forecast?lat=50.9375&lon=6.9603"
+curl.exe -u user:{password} "http://localhost:8080/forecast?lat=50.9375&lon=6.9603"
 
 # Adress-Anfrage
-curl "http://localhost:8080/forecast?country=Germany&city=Cologne&street=Domkloster&housenumber=4"
+curl.exe -u user:{password} "http://localhost:8080/forecast?country=Germany&city=Cologne&street=Domkloster&housenumber=4"  
 
-# Anfragen auch mit curl.exe möglich
 ```
