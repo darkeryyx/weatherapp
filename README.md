@@ -1,7 +1,7 @@
-# WeatherApp – Take-Home Assignment Teil 3
+# WeatherApp – Take-Home Assignment Teil 4
 
-Dieses Branch erweitert den **Forecast-Service** (Teil 1) und die **Webservice-Anbindung** (Teil 2) um eine 
-Authentifizierungsmöglichkeit per HTTP Basic Auth. Nur authentifizierte User dürfen Daten abrufen.
+Dieses Branch erweitert den **Forecast-Service** (Teil 1), die **Webservice-Anbindung** (Teil 2) und die HTTP 
+**Authentifizierungsmöglichkeit** (Teil 3) um Unittests.
 
 ### WICHTIG: Umgebung konfigurieren
 
@@ -18,24 +18,28 @@ export OPENWEATHER_API_KEY="HIER_DEIN_OPENWEATHER_KEY"
 # Um die App in der IDE zu starten, müssen die Variablen in den Konfigurationen der App gesetzt werden
 z.B. in IntelliJ: Run Configurations -> Modify options -> Environment variables
 
-# oder setz die Variablen direkt in ```src/main/resources/application.properties``` ein
+# oder setz die Variablen direkt in "src/main/resources/application.properties" ein
 ```
 
 Projekt starten:
 ```bash
 # Branch wechseln
-git checkout part-3-security
+git checkout part-4-tests
 
 # Build & Run (Windows PowerShell)
-.\mvnw.cmd clean install
+.\mvnw.cmd clean install #Alle Unittests werden automatisch ausgeführt
 .\mvnw.cmd spring-boot:run
 
 # Build & Run (macOS/Linux)
-./mvnw clean install
+./mvnw clean install #Alle Unittests werden automatisch ausgeführt
 ./mvnw spring-boot:run
 
 # Alternativ in IntelliJ IDEA:
 # Run-Button in WeatherappApplication.java klicken
+```
+Nur die Tests durchlaufen lassen:
+```bash
+.\mvnw.cmd clean test 
 ```
 ## Endpoints
 
