@@ -21,7 +21,7 @@ Diese README beschreibt den **main**‑Branch mit allgemeinen Voraussetzungen.
 ### Build & Ausführung
 
 In den Branches sind die Befehle mit ```mvnw.cmd``` geschrieben, damit es auf jeden Fall klappt
-Es klappt aber auch nur mit ```mvn```
+Es klappt aber auch nur mit ```mvn``` (wenn maven lokal installiert ist)
 
 Die App läuft dann auf `http://localhost:8080` 
 
