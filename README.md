@@ -28,10 +28,10 @@ Die App läuft dann auf `http://localhost:8080`
 ## Branch‑Strategie
 
 * **main**: Produktionsreife, stabile Version
-* **part-1-forecast**: Basisanwendung mit Zufallswerten
-* **part-2-geocoder**:  Anbindung von Webservices
-* **part-3-security**: HTTP Basic Authentication Konfiguration
-* **part-4-testing**: Unittests
+* **part-1-forecast**: Basisanwendung mit Zufallswerten (git checkout part-1-forecast)
+* **part-2-geocoder**:  Anbindung von Webservices       (git checkout part-2-geocoder)
+* **part-3-security**: HTTP Basic Authentication Konfiguration   (git checkout part-3-security)
+* **part-4-testing**: Unittests                              (git checkout part-4-testing)
 
 
 
