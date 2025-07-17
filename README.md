@@ -15,6 +15,11 @@ $Env:OPENWEATHER_API_KEY="HIER_DEIN_OPENWEATHER_KEY"
 # macOS/Linux (Bash)
 export OPENCAGE_API_KEY="HIER_DEIN_OPENCAGE_KEY"
 export OPENWEATHER_API_KEY="HIER_DEIN_OPENWEATHER_KEY"
+
+# Um die App in der IDE zu starten, müssen die Variablen in den Konfigurationen der App gesetzt werden
+z.B. in IntelliJ: Run Configurations -> Modify options -> Environment variables
+
+# oder setz die Variablen direkt in ```src/main/resources/application.properties``` ein
 ```
 
 Projekt starten:
