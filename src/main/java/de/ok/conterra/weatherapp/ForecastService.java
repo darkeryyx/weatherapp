@@ -55,6 +55,20 @@ public class ForecastService {
      *         or HTTP 503 if weather data cannot be retrieved
      */
     public List<ForecastDTO> getForecast(String country, String city, String street, int housenumber) {
+        if (country == null || country.isBlank() ||
+                city    == null || city.isBlank()    ||
+                street  == null || street.isBlank()) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "Die Parameter country, city und street dürfen nicht leer sein."
+            );
+        }
+        if (housenumber <= 0) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "Der Parameter housenumber muss größer 0 sein."
+            );
+        }
 
         String address = String.format("%s %d, %s, %s",
                 street, housenumber, city, country);
